@@ -26,9 +26,9 @@ def frmfrontpagesgr(efimerida, today, year):
 	except urllib2.HTTPError, e:
 		print(e.args)
 
+# Insert the date from the keyboard
 def insertdate():
 	global today, year
-	# Insert the date from the keyboard
 	mydate = raw_input("Please insert the date in the format YYYY/MM/DD (from the year 2010 till today): ")
 	year = mydate[0:4]
 	month = mydate[5:7]
@@ -40,9 +40,9 @@ def insertdate():
 	print "Will download the papers of " + weekday + " " + year + "/" + month + "/" + day + " !"
 	print " "
 
+# Calculating today's date, year and day of week, automatically (default)
 def autodate():
 	global today, year
-	# Calculating today's date, year and day of week, automatically (default)
 	mydate = time.strftime("%Y:%m:%d")
 	year = mydate[0:4]
 	month = mydate[5:7]
@@ -51,11 +51,6 @@ def autodate():
 	weekday = time.strftime("%a") + "day"
 	print "Will download today's (" + weekday + ") papers !"
 	print " "
-
-# def datesbetween():
-# 	date1 = raw_input("Give the first date in YYYY/MM/DD format: ")
-# 	date2 = raw_input("Give the second date in YYYY/MM/DD format: ")
-# 	paper = raw_input("Give the name of the newspaper: ")
 
 # Main function
 def main():
@@ -98,11 +93,6 @@ def main():
 		for efimerida in topikes_efimerides:
 			frmfrontpagesgr(efimerida,today,year)
 	print " "
-
-	# Another option
-	# seperate_paper = raw_input("3. Would you like to download all the copies of a specific paper between two dates? (Y/N)")
-	# if seperate_paper == "Y":
-	# 	datesbetween()
 
 if __name__ == "__main__":
 	main()
