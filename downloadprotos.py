@@ -68,7 +68,7 @@ def main():
 					,'PPatrisI','PGnomiI','PProtiI','DESyneidisiI','PAllagiI','PGegonotaI','PEleutheriaI','PProiniI','SLamiakosI','ASyneidhshI','AAttikoBhmaI',\
 					'AXtyposI','EthnikosKirikasI']
 
-    # Clear screen
+	# Clear screen
 	os.system('clear')
 
 	# Welcome Message
