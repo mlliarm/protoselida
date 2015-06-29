@@ -13,8 +13,7 @@ import time
 # Papers from frontpagesgr website
 def frmfrontpagesgr(efimerida, today, year):
 	try:
-		url = 'http://www.frontpages.gr/data/' + year + '/' + today + '/' + \
-		efimerida +'.jpg'
+		url = 'http://www.frontpages.gr/data/' + year + '/' + today + '/' + efimerida + '.jpg'
 		urllib2.urlopen(url)
 		wget.download(url)
 		oldname = efimerida + '.jpg'
