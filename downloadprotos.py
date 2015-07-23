@@ -77,19 +77,19 @@ def main():
 	print " "
 
 	# Decision making follows
-	answer = raw_input("1. Would you like to enter an older date? (Y/N): ")
-	if answer == "Y" or answer == "y":
+	answer = raw_input("1. Would you like to enter an older date? (YES/NO): ")
+	if answer == "YES" or answer == "yes":
 		insertdate()
 	else:
 		autodate()
 
 	# Choose if you want the local papers as well (43)
-	topikes = raw_input("2. Do you want the local newspapers of the day as well? (Y/N): ")
+	topikes = raw_input("2. Do you want the local newspapers of the day as well? (YES/NO): ")
 	
 	#	Call the downloading function
 	for efimerida in efimerides_vdomadas:
 		frmfrontpagesgr(efimerida,today,year)
-	if topikes == "Y" or topikes == "y":
+	if topikes == "YES" or topikes == "yes":
 		for efimerida in topikes_efimerides:
 			frmfrontpagesgr(efimerida,today,year)
 	print " "
