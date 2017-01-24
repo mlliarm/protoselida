@@ -72,19 +72,19 @@ def main():
 	os.system('clear')
 
 	# Welcome Message
-	print "WELCOME TO THE PROTOSELIDA (FIRST PAGES) DOWNLOADER !"
+	print "WELCOME TO THE PROTOSELIDA (FRONT PAGES) DOWNLOADER !"
 	print "-----------------------------------------------------"
 	print " "
 
 	# Decision making follows
-	answer = raw_input("1. Would you like to enter an older date? (YES/NO): ")
+	answer = raw_input("1. Would you like to enter an older date? (YES/[NO]): ")
 	if answer == "YES" or answer == "yes":
 		insertdate()
 	else:
 		autodate()
 
 	# Choose if you want the local papers as well (43)
-	topikes = raw_input("2. Do you want the local newspapers of the day as well? (YES/NO): ")
+	topikes = raw_input("2. Do you want the local newspapers of the day as well? (YES/[NO]): ")
 	
 	#	Call the downloading function
 	for efimerida in efimerides_vdomadas:
