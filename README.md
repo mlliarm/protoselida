@@ -4,6 +4,5 @@
 Scraps frontpages.gr for jpeg files of newspapers from the website 
 
 ## Dependencies
-* python 2.7
-* wget (from pip)
-* urllib2
+* python 3.x
+* wget (from pip3)
