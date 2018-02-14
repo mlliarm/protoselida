@@ -55,18 +55,18 @@ def autodate():
 # Main function
 def main():
 	# Main papers
-	efimerides_vdomadas = ['HKathimeriniI', 'TaNeaI','EthnosI', 'EfSynI', 'EstiaI','AugiI','EleutherosTyposI','RizospastisI','EspressoI',\
+	efimerides_vdomadas = ('HKathimeriniI', 'TaNeaI','EthnosI', 'EfSynI', 'EstiaI','AugiI','EleutherosTyposI','RizospastisI','EspressoI',\
 					'AgoraI', 'AggelioforosI','MakedoniaI', 'TiposThessalonikisI','KontraNewsI', 'ToParonI','FreeSundayI','ToXwniI','PressTimeI', 'KarfiI',\
 					'LogosI','StarPressI', 'EloraI','ParaskinioI','ArthroI','GPrinI','KarfitsaI','DimokratiaI','ApopsiI','HNautemporikiI','HmerhsiaI','GEpoxiI',\
-					'XrhmatisthrioI','MetoxosI','DimoprasionI','DealNewsI','IhodimoprasionI','OikonomikiBEI','DimoprasiakiAI']
+					'XrhmatisthrioI','MetoxosI','DimoprasionI','DealNewsI','IhodimoprasionI','OikonomikiBEI','DimoprasiakiAI')
 
 	# Local papers of the week
-	topikes_efimerides = ['HAgonI','HNeoiAgonesI','HProinosLogosI','HAnexartitosI','TTaxydromosI','TEleutheriaI','TMagnisiaI','TProinosTyposI', \
+	topikes_efimerides = ('HAgonI','HNeoiAgonesI','HProinosLogosI','HAnexartitosI','TTaxydromosI','TEleutheriaI','TMagnisiaI','TProinosTyposI', \
 					'TThessaliaI','NADimokratikiRodouI','NAKoiniGnomiI','NAKykladikiI','BAPolitisI','MTAgonasI','MTXronosI','MTNeaEgnatiaI',\
 					'MTProinosTyposI','MTEleutheroVimaI','MTNeaKastoriaI','MTSimeriniSerI','MTHmerhsiaVI','PanelliniaBEI','KMParatiritsI',\
 					'KMPoliteiaI','KPatrisI','KRethemniotikaI','KNeaKritiI','KAnatolhI','IEnimerosiI','IHmeraI','IHmerhsiosI','PPeloponnisosI' \
 					,'PPatrisI','PGnomiI','PProtiI','DESyneidisiI','PAllagiI','PGegonotaI','PEleutheriaI','PProiniI','SLamiakosI','ASyneidhshI','AAttikoBhmaI',\
-					'AXtyposI','EthnikosKirikasI']
+					'AXtyposI','EthnikosKirikasI')
 
 	# Clear screen
 	os.system('clear')
