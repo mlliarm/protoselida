@@ -10,8 +10,8 @@ import calendar
 import urllib
 import time
 
-# Papers from frontpagesgr website
 def frmfrontpagesgr(efimerida, today, year):
+	""" Downloads the newspaper images from the webpage """
 	try:
 		url = 'http://www.frontpages.gr/data/' + year + '/' + today + '/' + efimerida + '.jpg'
 		urllib.request.urlopen(url)
@@ -26,8 +26,8 @@ def frmfrontpagesgr(efimerida, today, year):
 	except urllib.error.HTTPError as e:
 		print(e.args)
 
-# Insert the date from the keyboard
 def insertdate():
+	""" Asks the user to insert the date of the newspaper(s) to be downloaded """
 	global today, year
 	mydate = input("Please insert the date in the format YYYY/MM/DD (from the year 2010 till today): ")
 	year = mydate[0:4]
@@ -40,8 +40,8 @@ def insertdate():
 	print("Will download the papers of " + weekday + " " + year + "/" + month + "/" + day + " !")
 	print(" ")
 
-# Calculating today's date, year and day of week, automatically (default)
 def autodate():
+	""" Calculating today's date, year and day of the week automatically (default) """
 	global today, year
 	mydate = time.strftime("%Y:%m:%d")
 	year = mydate[0:4]
@@ -52,8 +52,8 @@ def autodate():
 	print("Will download today's (" + weekday + ") papers !")
 	print(" ")
 
-# Main function
 def main():
+	""" Main function that has the names of the newspapers and calls the previous functions """
 	# Main papers
 	efimerides_vdomadas = ('HKathimeriniI', 'TaNeaI','EthnosI', 'EfSynI', 'EstiaI','AugiI','EleutherosTyposI','RizospastisI','EspressoI',\
 					'AgoraI', 'AggelioforosI','MakedoniaI', 'TiposThessalonikisI','KontraNewsI', 'ToParonI','FreeSundayI','ToXwniI','PressTimeI', 'KarfiI',\
