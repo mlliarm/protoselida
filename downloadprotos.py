@@ -1,4 +1,3 @@
-# encoding=utf8
 __author__ = "milia"
 __email__ = "milia@protonmail.com"
 __licence__ = "GPL v.2"
@@ -10,20 +9,24 @@ from datetime import date
 import calendar
 import urllib
 import time
-from urllib.parse import quote
+from urllib.request import Request, urlopen
+from PIL import Image
+import io
+
+class AppURLopener(urllib.request.FancyURLopener):
+    version = "Mozilla/5.0"
 
 def frmfrontpagesgr(efimerida, today, year):
 	""" Downloads the newspaper images from the webpage """
 	try:		
 		url = 'https://www.frontpages.gr/data/' + year + '/' + today + '/' + efimerida + '.jpg'
-		print(url)
-		urllib.request.urlopen(url)
-		wget.download(url)
+		req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+		image = urlopen(req).read()
+		image = Image.open(io.BytesIO(image))
 		oldname = efimerida + '.jpg'
-		newname = today + "_" + "FrontpagesGR" + "_" + oldname
-		os.rename(oldname, newname)
-	except urllib.error.HTTPError as e:
-		#print(e.code)
+		newname = today + "_" + "FrontpagesGR" + "_" + oldname		
+		image.save('./' + newname)
+	except urllib.error.HTTPError as e:		
 		print("ERROR 404: Paper " + efimerida + " not found !")
 		print(" ")
 	except urllib.error.HTTPError as e:
