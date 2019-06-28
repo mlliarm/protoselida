@@ -3,7 +3,6 @@ __email__ = "milia@protonmail.com"
 __licence__ = "GPL v.2"
 
 import datetime
-import wget
 import os
 from datetime import date
 import calendar
