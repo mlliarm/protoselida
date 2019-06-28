@@ -10,11 +10,12 @@ from datetime import date
 import calendar
 import urllib
 import time
+from urllib.parse import quote
 
 def frmfrontpagesgr(efimerida, today, year):
 	""" Downloads the newspaper images from the webpage """
 	try:		
-		url = 'https://www.frontpages.gr/d/' + today + '/' + str(efimerida.encode('utf-8')) + '.jpg'
+		url = 'https://www.frontpages.gr/data/' + year + '/' + today + '/' + efimerida + '.jpg'
 		print(url)
 		urllib.request.urlopen(url)
 		wget.download(url)
@@ -57,15 +58,19 @@ def autodate():
 def main():
 	""" Main function that has the names of the newspapers and calls the previous functions """
 	# Main papers
-	efimerides_vdomadas =('1/Η-Καθημερινή','2/Τα-Νέα', '5/Έθνος', '72/Η-εφημερίδα-των-συντακτών', '13/Αυγή', '9/Ριζοσπάστης','10/Ελεύθερος-Τύπος','6/Espresso','24/Αγγελιοφόρος',
-                              '45/Θεσσαλονίκη','504/Kontra-News','26/Εστία','27/Ελεύθερη-ώρα','34/Δημοκρατία','80/Η-Ναυτεμπορική', '87/Χρηματιστήριο','98/Ηχώ-των-Δημοπρασιών' )
+	efimerides_vdomadas = ('HKathimeriniI', 'TaNeaI','EthnosI', 'EfSynI', 'EstiaI','AugiI','EleutherosTyposI','RizospastisI','EspressoI',\
+					'AgoraI', 'AggelioforosI','MakedoniaI', 'TiposThessalonikisI','KontraNewsI', 'ToParonI','FreeSundayI','ToXwniI','PressTimeI', 'KarfiI',\
+					'LogosI','StarPressI', 'EloraI','ParaskinioI','ArthroI','GPrinI','KarfitsaI','DimokratiaI','ApopsiI','HNautemporikiI','HmerhsiaI','GEpoxiI',\
+					'XrhmatisthrioI','MetoxosI','DimoprasionI','DealNewsI','IhodimoprasionI','OikonomikiBEI','DimoprasiakiAI')
 
 
 	# Local papers of the week
-	topikes_efimerides = ('102/Πρωινός-Λόγος', '105/Ταχυδρόμος', '109/Ελευθερία', '133/Πρωινός-Τύπος', '405/Διάλογος', '406/Θεσσαλία', '148/Κοινή-Γνώμη', '418/Κυκλαδική',
-                              '113/Ο-Πολίτης', '439/Νέα-Εγνατία', '419/Τύπος-Χαλκιδικής', '131/Σημερινή-των-Σερρών', '303/Ημερησία', '413/Παρατηρητής', '431/Πολιτεία', '140/Πατρίς',
-                              '141/Ρεθεμνιώτικα-Νέα', '146/Νέα-Κρήτη', '409/Ανατολή', '151/Ημέρα-Ζακύνθου', '152/Ημερήσιος', '166/Πελοπόννησος', '165/Πατρίς', '160/Η-Γνώμη',
-                              '164/Πρώτη', '162/Ελευθερία', '415/Πρωινή-Ηλείας', '175/Λαμιακός-Τύπος')
+	topikes_efimerides = ('HAgonI','HNeoiAgonesI','HProinosLogosI','HAnexartitosI','TTaxydromosI','TEleutheriaI','TMagnisiaI','TProinosTyposI', \
+					'TThessaliaI','NADimokratikiRodouI','NAKoiniGnomiI','NAKykladikiI','BAPolitisI','MTAgonasI','MTXronosI','MTNeaEgnatiaI',\
+					'MTProinosTyposI','MTEleutheroVimaI','MTNeaKastoriaI','MTSimeriniSerI','MTHmerhsiaVI','PanelliniaBEI','KMParatiritsI',\
+					'KMPoliteiaI','KPatrisI','KRethemniotikaI','KNeaKritiI','KAnatolhI','IEnimerosiI','IHmeraI','IHmerhsiosI','PPeloponnisosI' \
+					,'PPatrisI','PGnomiI','PProtiI','DESyneidisiI','PAllagiI','PGegonotaI','PEleutheriaI','PProiniI','SLamiakosI','ASyneidhshI','AAttikoBhmaI',\
+					'AXtyposI','EthnikosKirikasI')
 
 	# Clear screen
 	os.system('clear')
