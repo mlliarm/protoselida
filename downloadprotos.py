@@ -12,9 +12,6 @@ from urllib.request import Request, urlopen
 from PIL import Image
 import io
 
-class AppURLopener(urllib.request.FancyURLopener):
-    version = "Mozilla/5.0"
-
 def frmfrontpagesgr(efimerida, today, year):
 	""" Downloads the newspaper images from the webpage """
 	try:		
