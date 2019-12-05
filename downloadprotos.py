@@ -12,23 +12,23 @@ from urllib.request import Request, urlopen
 from PIL import Image
 import io
 
-def frmfrontpagesgr(efimerida, today, year):
+def frmfrontpagesgr(efimerida:str, today:str, year:str) -> None:
 	""" Downloads the newspaper images from the webpage """
-	try:		
+	try:
 		url = 'https://www.frontpages.gr/data/' + year + '/' + today + '/' + efimerida + '.jpg'
 		req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 		image = urlopen(req).read()
 		image = Image.open(io.BytesIO(image))
 		oldname = efimerida + '.jpg'
-		newname = today + "_" + "FrontpagesGR" + "_" + oldname		
+		newname = today + "_" + "FrontpagesGR" + "_" + oldname
 		image.save('./' + newname)
-	except urllib.error.HTTPError as e:		
+	except urllib.error.HTTPError as e:
 		print("ERROR 404: Paper " + efimerida + " not found !")
 		print(" ")
 	except urllib.error.HTTPError as e:
 		print(e.args)
 
-def insertdate():
+def insertdate() -> None:
 	""" Asks the user to insert the date of the newspaper(s) to be downloaded """
 	global today, year
 	mydate = input("Please insert the date in the format YYYY/MM/DD (from the year 2010 till today): ")
@@ -42,7 +42,7 @@ def insertdate():
 	print("Will download the papers of " + weekday + " " + year + "/" + month + "/" + day + " !")
 	print(" ")
 
-def autodate():
+def autodate() -> None:
 	""" Calculating today's date, year and day of the week automatically (default) """
 	global today, year
 	mydate = time.strftime("%Y:%m:%d")
@@ -54,7 +54,7 @@ def autodate():
 	print("Will download today's (" + weekday + ") papers !")
 	print(" ")
 
-def main():
+def main() -> None:
 	""" Main function that has the names of the newspapers and calls the previous functions """
 	# Main papers
 	efimerides_vdomadas = ('HKathimeriniI', 'TaNeaI','EthnosI', 'EfSynI', 'EstiaI','AugiI','EleutherosTyposI','RizospastisI','EspressoI',\
